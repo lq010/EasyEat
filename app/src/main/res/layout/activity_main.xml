@@ -14,5 +14,5 @@
         android:layout_height="match_parent">
     </ListView>
 
-
+    <include layout="@layout/toolbar_bottom_customer" android:id="@+id/toolbar_bottom_customer"/>
 </RelativeLayout>

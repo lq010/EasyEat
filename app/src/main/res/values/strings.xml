@@ -10,4 +10,9 @@
     <string name="order"> Order</string>
 
     <string name="select_desire">Select your meals</string>
+    <!--customer tag-->
+    <string name="toolbar_bottom_main">main</string>
+    <string name="toolbar_bottom_order">order</string>
+    <string name="toolbar_bottom_admin">admin</string>
+
 </resources>
