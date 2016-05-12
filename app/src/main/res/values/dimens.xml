@@ -8,7 +8,7 @@
     <dimen name="verticalSpacing">10dp</dimen>
 
     <!-- diments listview divider -->
-    <dimen name="listview_divider" > 4dp</dimen>
+    <dimen name="listview_divider">4dp</dimen>
 
     <dimen name="text_size">18dp</dimen>
 

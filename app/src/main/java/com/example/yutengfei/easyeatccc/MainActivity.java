@@ -1,21 +1,24 @@
 package com.example.yutengfei.easyeatccc;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.io.File;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import com.example.yutengfei.easyeatccc.Utils.FileManager;
 import com.example.yutengfei.easyeatccc.Utils.MainArrayAdapter;
+import com.example.yutengfei.easyeatccc.Utils.SelectEvents;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -65,6 +68,22 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
         return true;
+    }
+    //in response to the click on the bottom toolbar "main", "order", "admin"
+    public void onTabClicked(View view)
+    {
+        view.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                view.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.click_anim));
+                SelectEvents se=new SelectEvents(view, MainActivity.this);
+                se.selectEvents(MainActivity.this, view);
+                Toast.makeText(MainActivity.this,"pressed",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
 
 
