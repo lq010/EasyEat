@@ -291,6 +291,7 @@ public class ShopOrderDishesActivity extends Activity implements
 			type.setProductList(productList);
 			type.setTypeName(s[i]);
 
+
 			productTypes.add(type);
 
 		}
