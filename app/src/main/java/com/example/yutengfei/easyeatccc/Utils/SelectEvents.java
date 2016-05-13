@@ -3,10 +3,10 @@ package com.example.yutengfei.easyeatccc.Utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.yutengfei.easyeatccc.DetailRestaurant.DetailRestaurant;
 import com.example.yutengfei.easyeatccc.R;
 
 
@@ -14,6 +14,15 @@ import com.example.yutengfei.easyeatccc.R;
  * Created by yutengfei on 13/04/16.
  */
 public class SelectEvents {
+
+    public static final String DEALS = "Deals";
+    public static final String MENU = "Menu";
+    public static final String SEAFOOD="Seafood";
+    public static final String SPECIAL_OFF="SpecialOffer";
+    public static final String PASTA="Pasta";
+    public static final String DESSERT="Dessert";
+    public static final String VEGETABLE="Vegetable";
+    public static final String PIZAA="Pizza";
 
     private Context context;
     private View view;
@@ -33,39 +42,56 @@ public class SelectEvents {
         });
     }
 
-    public void selectEvents(Context Context,View view){
+    public void selectEvents(Context context,View view){
 
         int id = view.getId();
 
         switch (id){
-
-            case R.id.icon_1:
-            case R.id.icon_2:
-            case R.id.icon_3:
-            case R.id.icon_4:
-            case R.id.icon_5:
-            case R.id.icon_6:
-            case R.id.icon_7:
-            case R.id.icon_8:
-                this.startActivity(context, com.example.yutengfei.easyeatccc.searchActivity.class,id, true);
+            case R.id.icon_1:   //Deals
+                startActivity(context, DetailRestaurant.class,false,DEALS);
+                break;
+            case R.id.icon_2:   //dessert
+                startActivity(context, DetailRestaurant.class,false,DESSERT);
+                break;
+            case R.id.icon_3:   //menu
+                startActivity(context, DetailRestaurant.class,false,MENU);
+                break;
+            case R.id.icon_4:   //pasta
+                startActivity(context, DetailRestaurant.class,false,PASTA);
+                break;
+            case R.id.icon_5:   //pizza
+                startActivity(context, DetailRestaurant.class,false,PIZAA);
+                break;
+            case R.id.icon_6:   //seafood
+                startActivity(context, DetailRestaurant.class,false,SEAFOOD);
+                break;
+            case R.id.icon_7:   //specialofffer
+                startActivity(context, DetailRestaurant.class,false,SPECIAL_OFF);
+                break;
+            case R.id.icon_8:   //vegetable
+                startActivity(context, DetailRestaurant.class,false,VEGETABLE);
                 break;
             default:
                 Toast.makeText(context,"default Item",Toast.LENGTH_SHORT).show();
                 break;
         }
+
+        return;
+
     }
 
-    //finish==true if replace the activity
-    //id passed to the new activity
-    public void startActivity(Context context,Class theClass,int id, boolean finish){
 
-        Intent intent = new Intent(context,theClass);
-        Bundle switchingKey = new Bundle();
-        intent.putExtra("id",id);
-        intent.putExtras(switchingKey);
+    public void startActivity(Context context,Class theClass, boolean finish,String orderBy){
+
+        Intent intent = new Intent();
         Activity activity = (Activity)context;
+        intent.setClass(context,theClass);
+        intent.putExtra("orderBy",orderBy);
         activity.startActivity(intent);
         if(finish)
             activity.finish();
+
+
+
     }
 }

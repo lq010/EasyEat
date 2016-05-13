@@ -15,4 +15,8 @@
     <string name="toolbar_bottom_order">order</string>
     <string name="toolbar_bottom_admin">admin</string>
 
+    <!--order food activity-->
+    <string name="order_finish">done</string>
+    <string name="totalPrice">TOTAL</string>
+    <string name="totalNum"></string>
 </resources>
