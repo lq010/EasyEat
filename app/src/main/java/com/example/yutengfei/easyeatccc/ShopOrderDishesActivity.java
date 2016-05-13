@@ -1,6 +1,7 @@
 package com.example.yutengfei.easyeatccc;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
@@ -133,7 +134,9 @@ public class ShopOrderDishesActivity extends Activity implements
 	public void onClick(View v) {
 		switch (v.getId()) {
 			case R.id.restaurant_header:
-				// TODO: 12/05/16  跳转到餐厅信息界面
+				Intent intent = new Intent();
+				intent.setClass(ShopOrderDishesActivity.this, RestauratDetailActivity.class);
+				startActivity(intent);
 				break;
 			case R.id.back_button:
 				// TODO: 13/05/16  back
@@ -240,7 +243,7 @@ public class ShopOrderDishesActivity extends Activity implements
 	@Override
 	public boolean onChildClick(ExpandableListView parent, View v,
 								int groupPosition, int childPosition, long id) {
-		// 数据请求完成之后再弹出框
+
 		return false;
 	}
 

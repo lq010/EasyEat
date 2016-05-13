@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="@color/whitesmoke"
             android:scrollbars="none"
             />
 
@@ -53,10 +53,12 @@
 
     <!--bottom layout, show total price-->
     <RelativeLayout
+        android:background="@color/whitesmoke"
         android:id="@+id/relative_bottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_title_height"
-        android:visibility="gone">
+        android:visibility="gone"
+        >
 
         <ImageView
             android:id="@+id/img_order"
