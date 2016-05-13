@@ -276,6 +276,7 @@ public class ShopOrderDishesActivity extends Activity implements
 		List<Product> productList = null;
 		ProductType type = null;
 		List<ProductType> productTypes = new ArrayList<ProductType>();
+		String[] s = {"starter","PRIMI PIATTI","SECONDIPIATTI","INSALATONE","Dessert"};
 		for(int i=0;i<5;i++){
 			type = new ProductType();
 			productList = new ArrayList<Product>();
@@ -288,7 +289,7 @@ public class ShopOrderDishesActivity extends Activity implements
 				productList.add(product);
 			}
 			type.setProductList(productList);
-			type.setTypeName("type_"+i);
+			type.setTypeName(s[i]);
 
 			productTypes.add(type);
 
